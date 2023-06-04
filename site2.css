@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@500&family=Libre+Franklin:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    life-style: none;
+    text-decoration: none;
+}
+
+/*txt here*/
+
+#toptext{
+    text-align: left;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: 'Outfit', sans-serif;
+    color: rgba(235, 255, 235, 0.5)
+}
+#header {
+    /*background-color: #333;*/
+    color: #fff;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 60px;
+    text-align: center;
+}
+.logo{
+    font-size:30px;
+    font-weight:700;
+    color:white;
+}
+
+#navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 90px;
+}
+
+.navi_button {
+    font-size: 13px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 80px;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    font-family: "Libre Franklin", sans-serif;
+    transition-duration: 0.5s;
+}
+
+.navi_button:hover{
+    border-bottom: 2px solid white;
+    transition-duration: 0.5s;
+}
+
+#improvement_button, #game_button {
+    display: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /*background-color: #555555;*/
+    /*background: linear-gradient(245deg,#4d9559 0%, #38703d 28%, #133917 75%);*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url("https://img.freepik.com/free-vector/forest-daytime-scene-with-various-forest-plant-tree_1308-58732.jpg?w=1800&t=st=1685625897~exp=1685626497~hmac=e396835c75bd3e9aa56d8827e69e42532d9d17c9c3c4040867532d364d0cb741");
+
+}
+
+#title_text {
+    margin-top: 150px;
+    /*color: white;*/
+    color: rgb(235, 255, 235);
+    text-align: center;
+    font-family: "Sk-Modernist", sans-serif;
+    font-weight: 600;
+    font-size: 80px;
+    margin-bottom: 50px;
+}
+
+.description {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    /*color: white;*/
+    color: rgb(235, 255, 235);
+    /*padding: 5px;*/
+}
+
+
+#butler-text {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    background-color:transparent;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+
+#butler-image {
+    width: 180px;
+    position: relative;
+    top: 20px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: brightness(0%) invert();
+}
+
+#play {
+    color: rgb(235, 255, 235);
+    font-size: 24px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    width: 20%;
+    font-family: "Avenir", sans-serif;
+    font-weight: bold;
+    display: table;
+    margin: 0 auto;
+    margin-top: 12px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(235, 255, 235, 0.01);
+    border-width: 2px;
+    border-color: rgb(235, 255, 235);
+    cursor: pointer;
+    transition-duration: 0.5s
+}
+
+#play:hover {
+    background-color: rgba(235, 255, 235, 0.1);
+    transition-duration: 0.5s
+}
+
+.calculator_element {
+    max-width: 1150px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.improvement_element {
+    max-width: 1150px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgb(200, 230, 200);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.section_title {
+    margin-left:190px;
+    font-weight:bold;
+    color: white;
+    font-family:'Poppins', sans-serif;
+}
+
+#location_title {
+    display: block;
+}
+#household_title {
+    display: none;
+}
+#travel_title {
+    display: none;
+}
+#food_title {
+    display: none;
+}
+#shopping_title {
+    display: none;
+}
+#footprint_title {
+    display: none;
+}
+
+.text_entry {
+    padding: 10px;
+    padding-left: 20px;
+    width: 50%;
+    border-radius:20px;
+    background-color: #eef0ee;
+    border-style: none;
+    border-color: #eef0ee;
+    outline-color: #eef0ee;
+    font-family: "Inter", serif
+}
+
+.text_entry:focus{
+    transition-duration: 0.5s;
+    outline-color: royalblue;
+}
+.num_entry {
+    padding:8px;
+    width: 15%;
+    margin-left:70%;
+    border-radius:20px;
+    background-color: #eef0ee;
+    border-style: none;
+    border-color: #eef0ee;
+    outline-color: #eef0ee;
+    font-family: "Inter", serif
+}
+
+.select {
+    padding:8px;
+    width: 15%;
+    margin-left:70%;
+    border-radius:20px;
+    background-color: #eef0ee;
+    border-style: none;
+    border-color: #eef0ee;
+    outline-color: #eef0ee;
+    font-family: "Inter", serif
+}
+
+.num_entry:focus{
+    transition-duration: 0.5s;
+    outline-color: royalblue;
+}
+
+.range_output {
+    padding: 8px;
+    margin-left: 80%;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: mintcream;
+}
+
+.footprint_output {
+    padding: 8px;
+    margin-left: 60%;
+    border-radius: 4px;
+    background-color: darkolivegreen;
+    color: mintcream;
+}
+
+#footprint_overall {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: gray;
+    font-size: 23px;
+    color: mintcream;
+}
+
+#comparison {
+    text-align: right;
+    float: right;
+    font-size: 12px;
+}
+
+.slide_containers {
+    margin-bottom: 15px;
+}
+
+.slide_containers p {
+    margin-bottom: 5px;
+}
+
+.slide_containers input[type="range"] {
+    -webkit-appearance: none;
+    margin-left: 60%;
+    width: 40%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 10px;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+}
+
+.slide_containers input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slide_containers input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    width: 33%;
+}
+
+.options_box {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(250, 250, 250);
+}
+.household_title {
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+.transport_title {
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+#location label,
+#household label, #travel label, #food label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+}
+
+#takeaction {
+    margin: 20px;
+}
+
+#next_button {
+    float: right;
+    padding: 10px;
+    margin-right: 10%;
+    cursor: pointer;
+    background-color: darkgreen;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    margin-bottom: 20px;
+}
+#improve_button {
+    float: right;
+    padding: 10px;
+    margin-right: 10%;
+    cursor: pointer;
+    background-color: darkgreen;
+    border-radius: 5px;
+    color: mintcream;
+    font-size: 23px;
+    display: none;
+    margin-bottom: 20px;
+}
+
+#home {
+    display: block;
+    margin: 20px;
+}
+
+#calc, #game, #improve {
+    display: none;
+    margin: 20px;
+}
+
+/* CSS for About Page */
+
+#about {
+    padding: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#about h3 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+.blackboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.blackboard {
+    background-color: rgb(235, 255, 235);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+    width: 100%;
+    color: rgb(40, 60, 30)
+    /*margin: */
+}
+
+.blackboard p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.blackboard ul {
+    list-style-type: square;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.blackboard li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/*calculator navigation*/
+#catagory_headings {
+
+}
+
+/*quick menu */
+
+.quickmenu_button {
+    background-color: #ffffff;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    cursor: pointer;
+}
+#quickmenu {
+    position: fixed;
+    /*left: 0%;*/
+    width: 60px;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 7px;
+    margin-left: 5%;
+}
+
+#quickmenu span {
+    /*width: 50px;*/
+    /*height: auto;*/
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    margin-bottom: 40px;
+    border-radius: 30px; /* Rounded shape */
+    align-items: center;
+    background-size: cover;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.icon {
+    width: 25px;
+    position: relative;
+    top: 20px;
+    height: auto;
+    /*filter: invert();*/
+
+}
+
+.quickmenu_button {
+    /*display: inline-block;*/
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+#location-jump {
+    background-color: lightblue;
+    display: flex;
+}
+#household-jump {
+    background-color: #f5f5f5;
+    display: flex;
+}
+#travel-jump {
+    background-color: #f5f5f5;
+    display: flex;
+}
+#food-jump {
+    background-color: #f5f5f5;
+    display: flex;
+}
+#shopping-jump {
+    background-color: #f5f5f5;
+    display: flex;
+}
+#footprint-jump {
+    display: none;
+    background-color: greenyellow;
+    margin-bottom: 0;
+    border-width: 4px;
+    border-color: greenyellow;
+}
+
+.calculator_element{
+    margin-left: 15%;
+}
+
+/*calculator elements*/
+#location {
+    display: block;
+}
+#household {
+    display: none;
+}
+#travel {
+    display: none;
+}
+#food {
+    display: none;
+}
+#shopping {
+    display: none;
+}
+#footprint {
+    display: none;
+}
+
+#takeaction {
+    display: none;
+}
+
+
+#btnAdd{}
+
+.improvement_text {
+    max-width: 1150px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgb(200, 255, 200);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+}
+.suggestion {
+    color: darkblue;
+    font-size: 16px;
+}
+.complete {
+    cursor: pointer;
+    float: right;
+    padding: 5px;
+    background-color: rgb(250, 200, 200);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#gameCanvas {
+    position: absolute;
+}
+
+#gameExpl{
+    float: right;
+    background-color: rgb(235, 255, 235);
+    border-radius: 20px;
+    padding: 20px;
+}

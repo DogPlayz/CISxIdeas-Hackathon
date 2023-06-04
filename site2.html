@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="site2.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <title>CarbonX</title>
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="header">
+    <h1 id="toptext">@TheoryWarriors</h1>
+    <div id="navigation">
+        <span onclick="goTo('home') " id="home_button" class="navi_button">Homepage</span>
+        <span onclick="goTo('calc')" id="calc_button" class="navi_button">Carbon Calculator</span>
+        <span onclick="goTo('improve')" id="improvement_button" class="navi_button">Do Better</span>
+        <span onclick="goTo('game'); gameLoop(10, document.getElementById('carbon_emissions_dat').value); document.getElementById('game').style.display = 'flex';" id="game_button" class="navi_button">Tree game</span>
+        <span onclick="goTo('about')" id="about_button" class="navi_button">About</span>
+    </div>
+</div>
+<div id="home">
+    <h1 id="title_text">CarbonX</h1>
+    <p class="description">Compare your Carbon footprint Worldwide</p>
+    <p class="description">Join the fun and learn about your impact on the planet!</p>
+    <br> <br>
+    <span onclick="goTo('calc')" id="play">PLAY!</span>
+</div>
+<div id="calc">
+    <div id="quickmenu">
+        <span onclick="jumpTo('location')" id="location-jump" class="quickmenu_button">
+            <img id = "location-icon" class="icon" src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png">
+        </span>
+        <span onclick="jumpTo('household')" id="household-jump" class="quickmenu_button">
+            <img id = "household-icon" class="icon" src="https://cdn-icons-png.flaticon.com/512/25/25694.png">
+        </span>
+        <span onclick="jumpTo('travel')" id="travel-jump" class="quickmenu_button">
+            <img id = "travel-icon" class="icon" src="https://cdn-icons-png.flaticon.com/512/64/64283.png">
+        </span>
+        <span onclick="jumpTo('food')" id="food-jump" class="quickmenu_button">
+            <img id = "food-icon" class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Eat-icon.svg/1200px-Eat-icon.svg.png">
+        </span>
+        <span onclick="jumpTo('shopping')" id="shopping-jump" class="quickmenu_button">
+            <img id = "shopping-icon" class="icon" src="https://static.thenounproject.com/png/4867004-200.png">
+        </span>
+        <span onclick="jumpTo('footprint')" id="footprint-jump" class="quickmenu_button">
+            <div id = "footprint-icon"></div>
+        </span>
+    </div>
+    <h1 class="section_title" id="location_title">Location</h1>
+    <div id="location" class="calculator_element">
+        <label for="loc">Location</label>
+        <br>
+        <input id ="loc" type="text" class="text_entry" placeholder="Enter your location here" onclick="this.placeholder=''">
+    </div>
+    <h1 class="section_title" id="household_title">Household</h1>
+    <div id="household" class="calculator_element">
+        <div class="options_box">
+            <h3 class="household_title">Your Household</h3>
+            <br>
+            <div class="slide_containers">
+                <label for="PeopleInHousehold">How many people are in your household</label>
+                <input type="range" id="PeopleInHousehold" name="household" class="slider" min="0" max="6" value="1">
+                <p class="range_output">Your household has <span id="PeopleInHousehold_output">1 person</span></p>
+            </div>
+            <br>
+            <div class="slide_containers">
+                <label for="Income">Your Income</label>
+                <input type="range" id="Income" name="Income" class="slider" min="0" max="5" value="1" step="0.01">
+                <p class="range_output">HK$<span id="Income_output">28300</span>/month</p>
+            </div>
+        </div>
+        <div class="options_box">
+            <h3 class="household_title">Your Home</h3>
+            <br>
+            <label for="livingSpace">Living Space: </label>
+            <p><input id="livingSpace" name="livingSpace" class="num_entry" type="number" value="172"> square feet</p>
+            <label for="construction_type">Type of Material </label>
+            <select id="construction_type" class="select">
+                <option value="steel">Mainly Steel</option>
+                <option value="concrete">Mainly Reinforced Concrete</option>
+                <option value="composite">Mainly Composite</option>
+            </select>
+            <label for="housing_type">Type of Housing </label>
+            <select id="housing_type" class="select">
+                <option value="house">House</option>
+                <option value="low">Low-rise</option>
+                <option value="high">High-rise</option>
+            </select>
+        </div>
+        <div class="options_box">
+            <h3 class="household_title">Household Usage</h3>
+            <br>
+            <label for="electricity">Electricity Usage: </label>
+            <p><input id="electricity" name="electricity" class="num_entry" type="number" value="460"> kWh / year</p>
+            <label for="gas">Natural Gas Usage: </label>
+            <p><input id="gas" name="gas" class="num_entry" type="number" value="100"> cubic feet / year</p>
+            <div class="slide_containers">
+                <label for="clean">Clean energy used</label>
+                <input type="range" id="clean" name="clean" class="slider" min="0" max="100" value="50" step="1">
+                <p class="range_output"><span id="clean_output">50</span>%</p>
+            </div>
+            <br>
+
+            <div class="slide_containers">
+                <label for="water">Water Usage:</label>
+                <input type="range" id="water" name="water" class="slider" min="0" max="10" value="1" step="0.01">
+                <p class="range_output"><span id="water_output">130</span> liters</p>
+            </div>
+        </div>
+    </div>
+    <h1 class="section_title" id="travel_title">Transportation</h1>
+    <div id="travel" class="calculator_element">
+        <div id="publicTransport" class="options_box">
+            <h3 class="transport_title">Public Transport</h3>
+            <br>
+            <label for="bus">Bus Usage: </label>
+            <p class="input_context"><input id="bus" name="bus" class="num_entry" type="number" value="147"> km / year</p>
+            <label for="rail">Light Rail Usage: </label>
+            <p class="input_context"><input id="rail" name="rail" class="num_entry" type="number" value="50"> km / year</p>
+            <label for="mtr">MTR Usage: </label>
+            <p class="input_context"><input id="mtr" name="mtr" class="num_entry" type="number" value="100"> km / year</p>
+            <label for="tram">Tram Usage: </label>
+            <p class="input_context"><input id="tram" name="tram" class="num_entry" type="number" value="30"> km / year</p>
+        </div>
+        <div id="semiPrivateTransport" class="options_box">
+            <h3 class="transport_title">Semi-Private Transport</h3>
+            <br>
+            <label for="taxi">Taxi Usage: </label>
+            <p class="input_context"><input id="taxi" name="taxi" class="num_entry" type="number" value="100"> km / year</p>
+            <label for="uber">Uber Usage: </label>
+            <p class="input_context"><input id="uber" name="uber" class="num_entry" type="number" value="100"> km / year</p>
+        </div>
+        <div id="airTravel" class="options_box">
+            <h3 class="transport_title">Air Transport</h3>
+            <br>
+            <label for="short">Short Flights (<3hrs): </label>
+            <p class="input_context"><input id="short" name="short" class="num_entry" type="number" value="1"> / year</p>
+            <label for="med">Medium Flights (3-6hrs): </label>
+            <p class="input_context"><input id="med" name="med" class="num_entry" type="number" value="3"> / year</p>
+            <label for="long">Long Flights (6-16hrs): </label>
+            <p class="input_context"><input id="long" name="long" class="num_entry" type="number" value="1"> / year</p>
+            <label for="verylong">Very Long Flights (>16hrs): </label>
+            <p class="input_context"><input id="verylong" name="verylong" class="num_entry" type="number" value="0"> / year</p>
+        </div>
+        <div id="myVehicles" class="options_box">
+            <h3 class="transport_title">Private Vehicles</h3>
+            <div class="row">
+                <table id = "table_travel" class="table table-responsive">
+                    <tbody id="TextBoxContainer">
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th colspan="5">
+                            <button id="btnAdd" type="button" class="btn btn-primary" data-toggle="tooltip" data-original-title="Add more controls"><i class="bi bi-plus"></i>&nbsp; Add&nbsp;</button></th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <h1 class="section_title" id="food_title">Food</h1>
+    <div id="food" class="calculator_element">
+        <div class="slide_containers">
+            <label for="meat">How much meat do you consume?</label>
+            <input type="range" id="meat" name="meat" min="0" max="5" value="1" step="0.1" class="slider">
+            <p class="range_output"> <span id="meat-value">2.3</span> daily servings</p>
+        </div>
+        <div class="slide_containers">
+            <label for="grain">How much grain do you consume?</label>
+            <input type="range" id="grain" name="grain" min="0" max="5" value="1" step="0.1" class="slider">
+            <p class="range_output"> <span id="grain-value">4.4</span> daily servings</p>
+        </div>
+        <div class="slide_containers">
+            <label for="dairy">How much dairy do you consume?</label>
+            <input type="range" id="dairy" name="dairy" min="0" max="5" value="1" step="0.1" class="slider">
+            <p class="range_output"> <span id="dairy-value">2.1</span> daily servings</p>
+        </div>
+        <div class="slide_containers">
+            <label for="fruit_veg">How many fruits and vegetables do you consume?</label>
+            <input type="range" id="fruit_veg" name="fruit_veg" min="0" max="5" value="1" step="0.1" class="slider">
+            <p class="range_output"> <span id="fruit_veg-value">3.4</span> daily servings</p>
+        </div>
+        <div class="slide_containers">
+            <label for="snack">How many snacks do you consume?</label>
+            <input type="range" id="snack" name="fruit_veg" min="0" max="5" value="1" step="0.1" class="slider">
+            <p class="range_output"> <span id="snack-value">3.2</span> daily servings</p>
+        </div>
+    </div>
+    <h1 class="section_title" id="shopping_title">Expenditures</h1>
+    <div id="shopping" class="calculator_element">
+        <p class="ShoppingInfo"> Goods</p>
+        <div class="slide_containers">
+            <label for="goods">How much do you spend on goods?</label>
+            <input type="range" id="goods" name="goods" min="0" max="10" value="1" step="0.01" class="slider">
+            <p class="range_output">~ HK$<span id="goods-value">15000</span>/month</p>
+        </div>
+        <p class="ShoppingInfo"> Services</p>
+        <div class="slide_containers">
+            <label for="services">How much do you spend on services?</label>
+            <input type="range" id="services" name="services" min="0" max="10" value="1" step="0.01" class="slider">
+            <p class="range_output">~ HK$<span id="services-value">15000</span>/month</p>
+        </div>
+    </div>
+    <h1 class="section_title" id="footprint_title">Footprint</h1>
+    <div id="footprint" class="calculator_element">
+        <h1>How do you compare?</h1>
+        <p id="footprint_overall">~<span id="total-value">0</span> tonnes of CO2 equivalent
+            <span id="comparison">0</span>
+        </p>
+        <div>
+            Household Emissions
+            <p class="footprint_output">~<span id="household-value">0</span> tonnes of CO2 equivalent</p>
+        </div>
+        <div>
+            Travel Emissions
+            <p class="footprint_output">~<span id="travel-value">0</span> tonnes of CO2 equivalent</p>
+        </div>
+        <div>
+            Food Emissions
+            <p class="footprint_output">~<span id="food-value">0</span> tonnes of CO2 equivalent</p>
+        </div>
+        <div>
+            Shopping Emissions
+            <p class="footprint_output">~<span id="shopping-value">0</span> tonnes of CO2 equivalent</p>
+        </div>
+    </div>
+    <span onclick="jumpNext()" id="next_button">Next</span>
+    <span onclick="jumpImprove()" id="improve_button">IMPROVE!</span>
+
+</div>
+<div id="improve">
+    <h1 class="section_title" id="improvement_title">Reducing my Carbon Footprint</h1>
+    <div id="no1" class="improvement_element">
+        <p class="improvement_text"> 1. <span class="suggestion" id="first" onclick="provideTip('first', 0)">click to show</span> <br><span class="complete" onclick="completeTip('first', 0)">Complete</span></p>
+        <p class="improvement_text"> 2. <span class="suggestion" id="second" onclick="provideTip('second', 1)">click to show</span> <br><span class="complete" onclick="completeTip('second', 1)">Complete</span></p></p>
+        <p class="improvement_text"> 3. <span class="suggestion" id="third" onclick="provideTip('third', 2)">click to show</span> <br><span class="complete" onclick="completeTip('third', 2)">Complete</span></p></p>
+    </div>
+</div>
+<div id="game">
+    <data id = "carbon_emissions_dat" value=100></data>
+    <div id = "gameExpl">
+        <p>Now that you've calculated your carbon footprint, the steps that you have taken in decreasing your footprint have grown into trees! However, those pesky carbon dioxide emissions have turned into wood choppers, chopping down your progress. Some are able to use magic and chop trees with their imagination so beware! Remove them all through clicking to ensure your forest stays alive. The longer your forest stays alive, the higher your score. </p>
+
+    </div>
+    <canvas id="gameCanvas"></canvas>
+</div>
+<div id="about">
+    <div class="blackboard-container">
+        <div class="blackboard">
+            <br>
+            <h3> <b>CarbonX</b></h3>
+            <br>
+            <p> <i>Here is some information about our team: </i></p>
+            <ul>
+                <li>CarbonX provides an effortless and accessible way for individuals and even companies to calculate their carbon footprint.</li>
+                <li>Incorporating facts and fun, CarbonX is unrivaled in allowing users to compare and contrast their personal carbon footprints with countless others around the world.</li>
+                <li>Join us and learn about your impact on our indispensable world!</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div id="butler-text"><img id="butler-image" src="https://butlerasia.com/wp-content/uploads/2022/12/ButlerLogo.png"></div>
+<script src="site2.js"></script>
+</body>
